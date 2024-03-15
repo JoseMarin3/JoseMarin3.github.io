@@ -1,0 +1,130 @@
+<html>
+<body>
+
+<label for="minombre">Cual es su nombre? </label>
+<input type="text" id="minombre" name="minombre"><br><br>
+
+<label for="pueblos">De que pueblo eres? </label>
+<select name="pueblos" id="pueblos">
+    <option>Adjuntas</option>
+    <option>Aguada</option>
+    <option>Aguadilla</option>
+    <option>Aguas Buenas</option>
+    <option>Aibonito</option>
+    <option>Añasco</option>
+    <option>Arecibo</option>
+    <option>Arroyo</option>
+    <option>Barceloneta</option>
+    <option>Barranquitas</option>
+    <option>Bayamón</option>
+    <option>Cabo Rojo</option>
+    <option>Caguas</option>
+    <option>Camuy</option>
+    <option>Canóvanas</option>
+    <option>Carolina</option>
+    <option>Cataño</option>
+    <option>Cayey</option>
+    <option>Ceiba</option>
+    <option>Ciales</option>
+    <option>Cidra</option>
+    <option>Coamo</option>
+    <option>Comerío</option>
+    <option>Corozal</option>
+    <option>Culebra</option>
+    <option>Dorado</option>
+    <option>Fajardo</option>
+    <option>Guánica</option>
+    <option>Guayama</option>
+    <option>Guayanilla</option>
+    <option>Guaynabo</option>
+    <option>Gurabo</option>
+    <option>Hatillo</option>
+    <option>Hormigueros</option>
+    <option>Humacao</option>
+    <option>Isabela</option>
+    <option>Jayuya</option>
+    <option>Juana Diaz</option>
+    <option>Juncos</option>
+    <option>Lajas</option>
+    <option>Lares</option>
+    <option>Las Marías</option>
+    <option>Las Piedras</option>
+    <option>Loíza</option>
+    <option>Luquillo</option>
+    <option>Manatí</option>
+    <option>Maricao</option>
+    <option>Maunabo</option>
+    <option>Mayagüez</option>
+    <option>Moca</option>
+    <option>Morovis</option>
+    <option>Naguabo</option>
+    <option>Naranjito</option>
+    <option>Orocovis</option>
+    <option>Patillas</option>
+    <option>Peñuelas</option>
+    <option>Ponce</option>
+    <option>Quebradillas</option>
+    <option>Rincón</option>
+    <option>Río Grande</option>
+    <option>Sabana Grande</option>
+    <option>Salinas</option>
+    <option>San Germán</option>
+    <option>San Juan</option>
+    <option>San Lorenzo</option>
+    <option>San Sebastían</option>
+    <option>Santa Isabel</option>
+    <option>Toa Alta</option>
+    <option>Toa Baja</option>
+    <option>Trujillo Alto</option>
+    <option>Utuado</option>
+    <option>Vega Alta</option>
+    <option>Vega Baja</option>
+    <option>Vieques</option>
+    <option>Villalba</option>
+    <option>Yabucoa</option>
+    <option>Yauco</option>
+</select>
+<br><br>
+
+<button onclick="mailme()">Submit</button>
+<br><br>
+
+<template>
+  <button onclick="mailme()" id="resultado">Mandar email</button>
+</template>
+
+<script>
+//let pueblo, nombre;//, temp, item, a, emptycheck;
+/*
+function resuelve(){
+	pueblo = document.getElementById("pueblos").value;
+	nombre = document.getElementById("minombre").value;
+	temp = document.getElementsByTagName("template")[0];
+	item = temp.content.querySelector("button");
+	emptycheck = document.getElementById("resultado");
+	if(emptycheck != null) emptycheck.remove();
+	a = document.importNode(item,true);
+	document.body.appendChild(a);
+}
+*/
+
+function mailme(){
+	pueblo = document.getElementById("pueblos").value;
+	nombre = document.getElementById("minombre").value;
+
+    let mailList = "mailto:agarcia@senado.pr.gov,airivera@senado.pr.gov,altorres@senado.pr.gov,jldalmau@senado.pr.gov,erosa@senado.pr.gov,japonte@senado.pr.gov,joarodriguez@senado.pr.gov,jumorales@senado.pr.gov,jvargas@senado.pr.gov,jzaragoza@senado.pr.gov,klcabrera@senado.pr.gov,magonzalez@senado.pr.gov,majimenez@senado.pr.gov,migonzalez@senado.pr.gov,mlsantiago@senado.pr.gov,rruiz@senado.pr.gov,rsoto@senado.pr.gov,magonzalez@senado.pr.gov,majimenez@senado.pr.gov,migonzalez@senado.pr.gov,mlsantiago@senado.pr.gov,rruiz@senado.pr.gov,rtrujillo@senado.pr.gov,trivera@senado.pr.gov,wsoto@senado.pr.gov,ddiazrub@gmail.com,administrador@ccdpr.org,asistenteadmin@ccdpr.org,prelafly@live.com";
+
+    let mailSubj = "?subject=Apoyo a proyectos PS984 y PS1270";
+
+    let mailBody = "&body=Honorables miembros del senado y comisión de Salud. Yo, " + nombre + ", vecino de " + pueblo + ", apoyo los siguientes proyectos:%0D%0AProyectos:%0D%0APS 984: Exigir a planes mantener red abierta para que los pacientes podamos obtener cubierta más fácilmente. Que el paciente mantenga la discreción de con qué Proveedor desea atenderse y no limitarse a la red del plan y aún poder disfrutar de la cubierta estipulada por su plan en el proceso de reembolso.%0D%0APS1270: Prohibir que los planes tengan interés económico en proveedores por conflicto de intereses ya que, como pacientes, vemos que los planes limitan aún más los servicios dirigiendo pacientes a sus propias clínicas para ser atendido en masas.%0D%0AAgradezco su tiempo y disposición para lograr la aprobación de estos proyectos y de aceptar las recomendaciones de cambios sugeridos por el Colegio de Cirujanos Dentistas.%0D%0A%0D%0AAtentamente,%0D%0A" + nombre;
+
+	if((pueblo !== null) && (nombre !== "")){
+        window.location.href = mailList + mailSubj + mailBody;
+	}
+}
+
+</script>
+
+
+</body>
+</html>
